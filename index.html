@@ -1,0 +1,225 @@
+f<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Oscar Daniel</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Estilos Neón, Botones Redondeados y Secciones de Mapas -->
+    <style>
+        body, .ui-page, .ui-content {
+            background-color: #0b0f19 !important;
+            color: #e0e0e0 !important;
+            font-family: Arial, sans-serif;
+        }
+        .ui-header {
+            background: #111827 !important;
+            border-bottom: 2px solid #00f3ff !important;
+            color: #00f3ff !important;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .perfil-container {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-photo-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00f3ff;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+        .info-personal {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid #ff007f;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 auto 20px auto;
+            text-align: left;
+            max-width: 420px;
+            box-sizing: border-box;
+        }
+        .info-personal p {
+            margin: 10px 0;
+            font-size: 15px;
+            color: #f3f4f6;
+        }
+        .info-personal strong {
+            color: #00f3ff;
+        }
+        
+        /* Botones compactos y redondeados estilo neón */
+        .btn-neon {
+            display: inline-block;
+            background: linear-gradient(135deg, #00f3ff, #0066ff);
+            color: #fff !important;
+            text-align: center;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px auto;
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.4);
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        .nav-panel {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn-pagina {
+            display: inline-block !important;
+            width: auto !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            background: #1f2937 !important;
+            border: 1px solid #ff007f !important;
+            color: #ff007f !important;
+            text-shadow: none !important;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+            text-decoration: none;
+        }
+        .btn-pagina:hover {
+            background: #ff007f !important;
+            color: #fff !important;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+        }
+
+        .seccion-mapa-contenedor {
+            padding: 20px;
+            background: #0f172a;
+            border-radius: 15px;
+            border: 2px solid #374151;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+        }
+        .seccion-mapa-contenedor h3 {
+            color: #00f3ff;
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PÁGINA 1: MENÚ PRINCIPAL -->
+    <div data-role="page" id="inicio">
+        <div data-role="header" data-theme="b">
+            <h1>Soy Oscarsimio</h1>
+        </div>
+
+        <div role="main" class="ui-content perfil-container">
+            <div class="page-title" style="font-size: 22px; font-weight: bold; margin-bottom: 15px; color: #ff007f; text-shadow: 0 0 10px rgba(255,0,127,0.5);">Página Principal</div>
+            
+            <!-- Fotografía circular centrada -->
+            <img class="profile-photo-circle" src="images/oscar.jpg" alt="Mi foto de perfil">
+
+            <!-- Información personal -->
+            <div class="info-personal">
+                <p><strong>Nombre:</strong> Oscar Daniel Pérez Aldana</p>
+                <p><strong>Fecha de nacimiento:</strong> 30 de Octubre de 2007</p>
+                <p><strong>Universidad:</strong> Universidad Politécnica del Valle de México (UPVM)</p>
+                <p><strong>Carrera:</strong> Ing. en Tecnologías de la Información e Innovación Digital</p>
+            </div>
+
+            <!-- Botón para ir a la sección de ubicación -->
+            <div>
+                <a href="#ubicacion" class="btn-neon" data-transition="slide">📍 Mi Ubicación </a>
+            </div>
+
+            <!-- Navegación entre páginas -->
+            <div class="nav-panel">
+                <a href="pagina1.html" class="ui-btn btn-pagina" data-transition="slide">Ir a Página 1</a>
+                <a href="pagina2.html" class="ui-btn btn-pagina" data-transition="slide">Ir a Página 2</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PÁGINA 2: SECCIÓN DE UBICACIÓN (Cumple Etapa 1 y Etapa 3) -->
+    <div data-role="page" id="ubicacion">
+        <div data-role="header" data-theme="b">
+            <h1>Mi Ubicación</h1>
+        </div>
+
+        <div role="main" class="ui-content" style="padding: 20px; max-width: 800px; margin: 0 auto;">
+            
+            <!-- Botón para regresar al menú principal -->
+            <div style="margin-bottom: 25px; text-align: left;">
+                <a href="#inicio" class="ui-btn btn-pagina" data-transition="slide" data-direction="reverse">⬅️ Volver al Menú Principal</a>
+            </div>
+
+            <h2 style="color: #00f3ff; text-shadow: 0 0 8px rgba(0, 243, 255, 0.4); text-align: center; margin-bottom: 25px;">Sección de Ubicación</h2>
+
+            <!-- ETAPA 1: Mapa incrustado con iframe -->
+            <div class="seccion-mapa-contenedor">
+                <h3>1. Vista general (Mapa con Iframe)</h3>
+                <div style="border-radius: 8px; overflow: hidden; border: 1px solid #374151;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661858564177!2d-99.1128!3d19.638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f5005b6348ef%3A0x89e02ef2c95e54d3!2sUniversidad%20Politecnica%20del%20Valle%20de%20Mexico!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- ETAPA 3: Mapa interactivo con JavaScript y tu API Key -->
+            <div class="seccion-mapa-contenedor">
+                <h3>2. Mapa interactivo (JavaScript y API Key)</h3>
+                <p style="font-size: 14px; color: #9ca3af; margin-bottom: 10px;"></p>
+                <div id="mapa" style="height: 400px; width: 100%; border-radius: 8px; border: 1px solid #374151;"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script del mapa interactivo con JavaScript -->
+    <script>
+        $(document).on("pageshow", "#ubicacion", function () {
+            // Reemplaza estas coordenadas con las exactas de tu domicilio
+            const ubicacion = { lat: 19.647016813347772, lng: -99.13448353158333 }; 
+        
+            const mapa = new google.maps.Map(document.getElementById("mapa"), {
+                zoom: 17,
+                center: ubicacion,
+            });
+
+            new google.maps.Marker({
+                position: ubicacion,
+                map: mapa,
+                title: "Mi Ubicación Exacta",
+            });
+        });
+    </script>
+
+    <!-- Carga la API de Google Maps usando tu API Key -->
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLk3A_aPzmyGub8ftxWNHto9nvn7x8hu4" 
+        async 
+        defer>
+    </script>
+</body>
+</html>

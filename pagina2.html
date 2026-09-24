@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Estilos Neón y componentes adaptados -->
+    <style>
+        body, .ui-page, .ui-content {
+            background-color: #0b0f19 !important;
+            color: #e0e0e0 !important;
+            font-family: Arial, sans-serif;
+        }
+        .ui-header {
+            background: #111827 !important;
+            border-bottom: 2px solid #00f3ff !important;
+            color: #00f3ff !important;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .perfil-container {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-photo-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00f3ff;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+        .nav-panel {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        .btn-pagina {
+            display: inline-block !important;
+            width: auto !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            background: #1f2937 !important;
+            border: 1px solid #ff007f !important;
+            color: #ff007f !important;
+            text-shadow: none !important;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+            text-decoration: none;
+        }
+        .btn-pagina:hover {
+            background: #ff007f !important;
+            color: #fff !important;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page" id="pagina2">
+        <div data-role="header" data-theme="b">
+            <h1>Página 2</h1>
+        </div>
+
+        <div role="main" class="ui-content perfil-container">
+            <div class="page-title" style="font-size: 22px; font-weight: bold; margin-bottom: 15px; color: #ff007f; text-shadow: 0 0 10px rgba(255,0,127,0.5);">Página 2</div>
+            
+            <!-- Fotografía circular centrada -->
+            <img class="profile-photo-circle" src="images/oscar.jpg" alt="Mi foto">
+
+            <!-- Navegación con botones redondeados -->
+            <div class="nav-panel">
+                <a href="index.html" class="ui-btn btn-pagina" data-transition="slide" data-direction="reverse">Volver Inicio</a>
+                <a href="pagina1.html" class="ui-btn btn-pagina" data-transition="slide">Ir a Página 1</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
