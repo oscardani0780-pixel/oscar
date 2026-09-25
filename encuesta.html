@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta UPVM - Oscar Daniel</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Estilos Neón idénticos al resto de tu proyecto -->
+    <style>
+        body, .ui-page, .ui-content {
+            background-color: #0b0f19 !important;
+            color: #e0e0e0 !important;
+            font-family: Arial, sans-serif;
+        }
+        .ui-header {
+            background: #111827 !important;
+            border-bottom: 2px solid #00f3ff !important;
+            color: #00f3ff !important;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .perfil-container {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-photo-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00f3ff;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+        .form-container {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid #ff007f;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 auto 20px auto;
+            text-align: left;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+        .form-container label {
+            color: #00f3ff;
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+        .btn-neon {
+            display: inline-block;
+            background: linear-gradient(135deg, #00f3ff, #0066ff);
+            color: #fff !important;
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px auto;
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.4);
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+            transform: scale(1.02);
+        }
+        .btn-pagina {
+            display: inline-block !important;
+            width: auto !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            background: #1f2937 !important;
+            border: 1px solid #ff007f !important;
+            color: #ff007f !important;
+            text-shadow: none !important;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-role="page" id="encuesta">
+        <div data-role="header" data-theme="b">
+            <h1>Encuesta UPVM</h1>
+        </div>
+
+        <div role="main" class="ui-content perfil-container">
+            <!-- Tu foto requerida en la página -->
+            <img class="profile-photo-circle" src="images/oscar.jpg" alt="Mi foto">
+            
+            <div style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #ff007f; text-shadow: 0 0 10px rgba(255,0,127,0.5);">
+                Evaluación de Servicios e Instalaciones
+            </div>
+
+            <!-- Formulario vinculado a guardar.php (Base de datos "encuesta") -->
+            <div class="form-container">
+                <form action="guardar.php" method="POST">
+                    
+                    <!-- Pregunta 1 -->
+                    <label>1. ¿Cómo calificarías el estado actual de las instalaciones de la UPVM?</label>
+                    <select name="p1_instalaciones" data-native-menu="false">
+                        <option value="Excelente">Excelente</option>
+                        <option value="Bueno">Bueno</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Malo">Malo</option>
+                    </select>
+
+                    <!-- Pregunta 2 -->
+                    <label>2. ¿Los profesores demuestran dominio y claridad en los temas de clase?</label>
+                    <select name="p2_profesores" data-native-menu="false">
+                        <option value="Siempre">Siempre</option>
+                        <option value="Frecuentemente">Frecuentemente</option>
+                        <option value="Raras veces">Raras veces</option>
+                        <option value="Nunca">Nunca</option>
+                    </select>
+
+                    <!-- Pregunta 3 -->
+                    <label>3. ¿Qué tan satisfecho estás con el nivel académico de tu carrera?</label>
+                    <select name="p3_nivel_academico" data-native-menu="false">
+                        <option value="Muy Satisfecho">Muy Satisfecho</option>
+                        <option value="Satisfecho">Satisfecho</option>
+                        <option value="Poco Satisfecho">Poco Satisfecho</option>
+                        <option value="Insatisfecho">Insatisfecho</option>
+                    </select>
+
+                    <!-- Pregunta 4 -->
+                    <label>4. ¿Consideras accesible y seguro el transporte para llegar a la universidad?</label>
+                    <select name="p4_transporte" data-native-menu="false">
+                        <option value="Totalmente de acuerdo">Totalmente de acuerdo</option>
+                        <option value="De acuerdo">De acuerdo</option>
+                        <option value="En desacuerdo">En desacuerdo</option>
+                    </select>
+
+                    <!-- Pregunta 5 -->
+                    <label>5. ¿Recomendarías estudiar en la UPVM a futuros estudiantes?</label>
+                    <select name="p5_recomendacion" data-native-menu="false">
+                        <option value="Definitivamente sí">Definitivamente sí</option>
+                        <option value="Tal vez">Tal vez</option>
+                        <option value="No lo recomendaría">No lo recomendaría</option>
+                    </select>
+
+                    <br>
+                    <button type="submit" class="btn-neon">Enviar Encuesta</button>
+                </form>
+            </div>
+
+            <!-- Botón para volver -->
+            <div>
+                <a href="index.html" class="ui-btn btn-pagina" data-transition="slide" data-direction="reverse">⬅️ Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
