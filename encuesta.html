@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta UPVM - Formulario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Menú de Navegación -->
+    <header class="bg-indigo-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wide">Portal UPVM</h1>
+            <nav class="mt-3 sm:mt-0 flex items-center space-x-6">
+                <a href="index.html" class="hover:text-indigo-300 transition">Inicio</a>
+                <a href="encuesta.html" class="hover:text-indigo-300 font-semibold border-b-2 border-indigo-400 pb-1">Encuesta</a>
+                <a href="regalo.html" class="hover:text-indigo-300 transition">Regalo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-3xl mx-auto px-4 py-10 flex-grow w-full">
+        
+        <!-- Característica 1: Todas las páginas deben contener tu foto -->
+        <div class="flex items-center space-x-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 mb-6">
+            <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-indigo-600 bg-slate-200 flex-shrink-0">
+                <img src="tu-foto.jpg" alt="Oscar Daniel Perez Aldana" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80'">
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-900">Oscar Daniel Perez Aldana</h4>
+                <p class="text-xs text-slate-500">Desarrollador del proyecto • ITID UPVM</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+            <h2 class="text-2xl font-bold text-indigo-900 mb-2">Encuesta Institucional UPVM</h2>
+            <p class="text-sm text-slate-600 mb-6">Por favor, responde las 5 preguntas sobre nuestra universidad. (Recuerda que al menos 10 personas deben enviarla).</p>
+
+            <!-- Aquí está el formulario que apunta a tu base de datos vía guardar.php -->
+            <form action="guardar.php" method="POST" class="space-y-6">
+                
+                <!-- Datos del participante -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre del participante:</label>
+                        <input type="text" name="nombre" required class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm" placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Matrícula / ID:</label>
+                        <input type="text" name="matricula" required class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm" placeholder="Ej. 31230000">
+                    </div>
+                </div>
+
+                <!-- Pregunta 1 -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-800 mb-2">1. ¿Cómo calificarías el nivel de preparación y enseñanza de los profesores de la UPVM?</label>
+                    <select name="p1" required class="w-full px-3 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Excelente">Excelente</option>
+                        <option value="Bueno">Bueno</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Deficiente">Deficiente</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-800 mb-2">2. ¿Qué tan adecuadas consideras que son las instalaciones y laboratorios de cómputo?</label>
+                    <select name="p2" required class="w-full px-3 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Muy adecuadas">Muy adecuadas</option>
+                        <option value="Adecuadas">Adecuadas</option>
+                        <option value="Faltan equipos">Faltan equipos o mantenimiento</option>
+                        <option value="Insuficientes">Insuficientes</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-800 mb-2">3. ¿Cómo calificas el servicio de atención en áreas administrativas y escolares?</label>
+                    <select name="p3" required class="w-full px-3 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Rápido y eficiente">Rápido y eficiente</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Lento">Lento</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-800 mb-2">4. ¿Qué tan satisfecho estás con el ambiente estudiantil y cultural en la universidad?</label>
+                    <select name="p4" required class="w-full px-3 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Muy satisfecho">Muy satisfecho</option>
+                        <option value="Satisfecho">Satisfecho</option>
+                        <option value="Poco satisfecho">Poco satisfecho</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-800 mb-2">5. En general, ¿recomendarías estudiar en la Universidad Politécnica del Valle de México?</label>
+                    <select name="p5" required class="w-full px-3 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Definitivamente sí">Definitivamente sí</option>
+                        <option value="Tal vez">Tal vez</option>
+                        <option value="No lo recomendaría">No lo recomendaría</option>
+                    </select>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-xl shadow-md transition">
+                        Enviar Encuesta y Reclamar Regalo 🎁
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-6 text-sm">
+        <p>&copy; 2026 Universidad Politécnica del Valle de México (UPVM)</p>
+    </footer>
+
+</body>
+</html>
