@@ -15,6 +15,20 @@ if ($conn->connect_error) {
 }
 $conn->set_charset("utf8mb4");
 
+// Crear la tabla "encuesta" automáticamente si no existe en Railway
+$sql_tabla = "CREATE TABLE IF NOT EXISTS encuesta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    matricula VARCHAR(50) NOT NULL,
+    p1 VARCHAR(50) NOT NULL,
+    p2 VARCHAR(50) NOT NULL,
+    p3 VARCHAR(50) NOT NULL,
+    p4 VARCHAR(50) NOT NULL,
+    p5 VARCHAR(50) NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+$conn->query($sql_tabla);
+
 // Obtener los datos enviados por el formulario de la encuesta
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $conn->real_escape_string($_POST['nombre']);
