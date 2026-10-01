@@ -4,63 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Felicidades! - Regalo UPVM</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <style>
+        body, .ui-page, .ui-content {
+            background-color: #0b0f19 !important;
+            color: #e0e0e0 !important;
+            font-family: Arial, sans-serif;
+        }
+        .ui-header {
+            background: #111827 !important;
+            border-bottom: 2px solid #00f3ff !important;
+            color: #00f3ff !important;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .profile-photo-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00f3ff;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+        .card-neon {
+            background: #111827;
+            border: 1px solid #00f3ff;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .cupon-box {
+            background: #1f2937;
+            border: 2px dashed #ff007f;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .btn-pagina {
+            display: inline-block !important;
+            padding: 12px 25px !important;
+            border-radius: 25px !important;
+            background: #1f2937 !important;
+            border: 1px solid #ff007f !important;
+            color: #ff007f !important;
+            text-shadow: none !important;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-pagina:hover {
+            background: #ff007f !important;
+            color: #fff !important;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+        }
+        .nav-panel {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
-
-    <!-- Menú de Navegación -->
-    <header class="bg-indigo-900 text-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
-            <h1 class="text-xl font-bold tracking-wide">Portal UPVM</h1>
-            <nav class="mt-3 sm:mt-0 flex items-center space-x-6">
-                <a href="index.html" class="hover:text-indigo-300 transition">Inicio</a>
-                <a href="encuesta.html" class="hover:text-indigo-300 transition">Encuesta</a>
-                <a href="regalo.html" class="hover:text-indigo-300 font-semibold border-b-2 border-indigo-400 pb-1">Regalo</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Contenido Principal -->
-    <main class="max-w-3xl mx-auto px-4 py-12 flex-grow text-center w-full">
-        
-        <!-- Característica 1: Todas las páginas deben contener tu foto -->
-        <div class="mb-6 flex flex-col items-center">
-            <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-indigo-600 shadow-md mb-2 bg-slate-200">
-                <img src="tu-foto.jpg" alt="Oscar Daniel Perez Aldana" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80'">
-            </div>
-            <p class="text-xs text-slate-500 font-semibold">Creado por Oscar Daniel Perez Aldana</p>
+<body>
+    <div data-role="page" id="regalo">
+        <div data-role="header" data-theme="b">
+            <h1>Portal UPVM - Recompensa</h1>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-100">
-            <!-- Característica 9: Regalo al terminar la encuesta -->
-            <div class="text-6xl mb-4">🎉🎁</div>
-            <h2 class="text-3xl font-extrabold text-indigo-900 mb-3">¡Muchas gracias por completar la encuesta!</h2>
-            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
-                Tu respuesta ha sido almacenada exitosamente en la base de datos de la encuesta institucional UPVM. Como agradecimiento por tu tiempo, aquí tienes tu regalo sorpresa:
-            </p>
+        <div role="main" class="ui-content" style="text-align: center; padding-top: 20px;">
+            <img class="profile-photo-circle" src="images/oscar.jpg" alt="Oscar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80'">
+            <p style="color: #9ca3af; font-size: 13px;">Creado por Oscar Daniel Perez Aldana</p>
 
-            <div class="bg-indigo-50 border-2 border-dashed border-indigo-300 rounded-2xl p-6 mb-8 max-w-md mx-auto">
-                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Cupón de Acceso Digital / Recurso</span>
-                <h3 class="text-xl font-bold text-slate-900 mt-1 mb-2">Pase VIP para Asesorías de Programación & Kit de Plantillas UPVM</h3>
-                <p class="text-xs text-slate-500">Presenta esta pantalla digital o usa el código <strong class="text-indigo-700">UPVM-2026-ITID</strong> para canjear un café gratis en la cafetería escolar o material de apoyo exclusivo.</p>
-            </div>
+            <div class="card-neon">
+                <div style="font-size: 45px; margin-bottom: 10px;">🎉🎁</div>
+                <h2 style="color: #00f3ff; margin-bottom: 10px;">¡Encuesta Registrada con Éxito!</h2>
+                <p style="color: #d1d5db; font-size: 14px; margin-bottom: 20px;">
+                    Tus respuestas se han guardado correctamente en la base de datos. Como agradecimiento por tu tiempo, aquí tienes tu regalo sorpresa:
+                </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="encuesta.html" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-6 py-3 rounded-xl transition text-sm">
-                    Contestar otra respuesta
-                </a>
-                <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition text-sm">
-                    Regresar al Inicio
-                </a>
+                <div class="cupon-box">
+                    <span style="color: #ff007f; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Cupón Digital Exclusivo</span>
+                    <h3 style="color: #ffffff; margin: 8px 0;">Pase VIP para Asesorías de Programación & Kit UPVM</h3>
+                    <p style="color: #9ca3af; font-size: 12px; margin: 0;">Usa el código <strong style="color: #00f3ff;">UPVM-2026-ITID</strong> para canjear tu beneficio en la institución.</p>
+                </div>
+
+                <div class="nav-panel">
+                    <a href="encuesta.html" class="ui-btn btn-pagina" style="border-color: #00f3ff !important; color: #00f3ff !important;">Contestar Otra</a>
+                    <a href="index.html" class="ui-btn btn-pagina">Volver al Inicio</a>
+                </div>
             </div>
         </div>
-
-    </main>
-
-    <!-- Pie de página -->
-    <footer class="bg-slate-900 text-slate-400 text-center py-6 text-sm">
-        <p>&copy; 2026 Universidad Politécnica del Valle de México (UPVM)</p>
-    </footer>
-
+    </div>
 </body>
 </html>
